@@ -13,3 +13,19 @@ toggle.addEventListener('click', function() {
         body.style.transition = '2s';
     }
 })
+
+// First - get everything inside the input
+
+// getElementById = "input" / and store it in const
+const inputEl = document.getElementById("input");
+
+function fetchAPI(word){
+    console.log(word);
+}
+
+// add an event listener to get everything inside the input
+inputEl.addEventListener("keyup", (e)=>{
+    if(e.target.value && e.key === "Enter"){
+        fetchAPI(e.target.value)
+    };
+})
