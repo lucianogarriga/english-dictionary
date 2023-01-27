@@ -20,7 +20,13 @@ toggle.addEventListener('click', function() {
 const inputEl = document.getElementById("input");
 
 function fetchAPI(word){
-    console.log(word);
+    const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
+    //we can request from the API - so we can have the result
+    //we create a const and we call it result
+    //fetch(const url) -- after the fetching we want to wait for the (response)
+    //we get the response and we want to convert this response to a JSON file with a Js method
+    const result = fetch(url).then((res)=>res.json());
+    console.log(result);
 }
 
 // add an event listener to get everything inside the input
