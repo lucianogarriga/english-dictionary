@@ -19,13 +19,16 @@ toggle.addEventListener('click', function() {
 // getElementById = "input" / and store it in const
 const inputEl = document.getElementById("input");
 
-function fetchAPI(word){
+async function fetchAPI(word){
     const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
     //we can request from the API - so we can have the result
     //we create a const and we call it result
+    
     //fetch(const url) -- after the fetching we want to wait for the (response)
     //we get the response and we want to convert this response to a JSON file with a Js method
-    const result = fetch(url).then((res)=>res.json());
+    const result = await fetch(url).then((res)=>res.json());
+    //Always have to use AWAIT when we are fetching data from API
+    //An then, we need to change the function from normal to async function
     console.log(result);
 }
 
