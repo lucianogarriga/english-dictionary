@@ -4,13 +4,14 @@
 }
 
 body{ 
-    padding: 0px 20px;
     box-sizing: border-box;
+    margin: 10px;
+    padding: 0px 5px;
     display: flex;
     min-height: 100vh;
     justify-content: center;
     align-items: center;  
-    line-height: 42px;
+    line-height: 45px;
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -24,13 +25,15 @@ h1{
     font-size: 2rem;
     margin: 5px;
 }
+.info-text{
+    font-size: 1.2rem;
+}
 .container{
     background-color: rgba(255, 255, 255, .3);
-    padding: 28px;
+    padding: 20px;
     border-radius: 15px;
     box-shadow: 0 10px 10px rgba(0,0,0, .6);
-    width: 90%;
-    margin: 10px;
+    width: 90%; 
     max-width: 400px;
     text-align: center;
     font-size: 1rem;
@@ -38,13 +41,13 @@ h1{
 }
 .input{
     height: 40px;
-    width: 280px;
+    width: calc(100% - 25px);
     background-color: rgba(255, 255, 255, .8);
     border-color: rgba(255, 255, 255, .8);
     border-radius: 5px;
-    padding: 0 10px;
-    margin: 10px;
-    font-size: 12px;
+    padding: 2px;
+    margin: 10px 1px; 
+    font-size: 1rem;
 }
 .meaning-container{
     display: none;
