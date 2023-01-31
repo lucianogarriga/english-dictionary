@@ -9,7 +9,8 @@ It is based on HTML, CSS and Javascript.
   
 <br>
 
-## **JAVASCRIPT DOCS** - DOM - fetch - API - async - await
+# **JAVASCRIPT DOCS** 
+## A) Fetch - API - Async - Await
 
 <br>
 
@@ -52,9 +53,9 @@ We create a const and we call it result
     }
 ```
 
-### TRY-CATCH
+## B) TRY - CATCH
 
-Another things we need to do when we are fetching data => Use Try and Catch a statement.
+Another things we need to do when we are fetching data => Use **Try and Catch** statement.
 
 ```js
     try {
@@ -73,15 +74,16 @@ We need to cut everything and put it inside the try
         const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
         const result = await fetch(url).then((res)=>res.json());
         console.log(result);
+
     } catch (error) {
         console.log(error);
     }
 ```
 If an error happens => this try-catch it gets the error and show it.
 
-## INNERTEXT
+## C) InnerText
 
-I want to change the inner text of 'info-text' ID. 
+We want to change the inner text of 'info-text' ID. 
 
 ```js
     infoTextEl.innerText = `Searching the meaning of "${word}"`;
@@ -91,17 +93,28 @@ After the results comes, we set the display of this info text element to **NONE*
 ```js
         infoTextEl.style.display = "none"
 ```
-Then, we need to bring it back to the nromal display when we are requesting again.
+Then, we need to bring it back to the normal display when we are requesting again.
 So we put it before the request, and we change the display to block there.
 
 ```js
         infoTextEl.style.display = "block";
 ```
 
+Then we need to bring the element called 'meaning-container' too.  
+We do that getting the element by ID. 
+
+```js
+    const meaningContainerEl = document.getElementById("meaning-container"); 
+```
+We need to show the display block after the result comes. So, we have to put after that. 
+
+```js
+    meaningContainerEl.style.display = "block";
+```
 
 <br> 
 
-## EVENT LISTENER - KEYUP - fetchAPI  
+## D) Event Listener - Keyup - FetchAPI  
 <br>
 
 1) We take the HTML element by ID 
@@ -119,6 +132,29 @@ So we put it before the request, and we change the display to block there.
 ```
 <br> 
 
+## E) Title & Meaning of Word (getElementById / innerText)
+
+After we get the result, we need to take the HTML element by ID of "title" and "meaning" of each words.
+
+```js
+    const titleEl = document.getElementById("title");
+    const meaningEl = document.getElementById("meaning");
+```
+Then, we need to put into the try of async function, the titleEl into the result.  
+Here, we put into an array, where we want to get the title [0] first.   
+Then, we want the meaning.   
+The first position in the result [0], and the first in meanings too [0], and then we need the first definition [0] into definitions.
+
+```js
+    titleEl.innerText = result[0].word;  
+    meaningEl.innerText = result[0].meanings[0].definitions[0].definition;
+```
+
+<br>
+
+-----
+<br>
+
 ## I invite you to try this wonderful dictionary, and if you like it, share it so that we can all learn in a simple and fun way.
 
 <br>
@@ -131,7 +167,10 @@ https://lucianogarriga.github.io/english-dictionary/
 
 <br>
 
-## You can find me in the following networks: 
+ ------
+<br>
+
+### You can find me in the following networks: 
 <br>
 
 - [LinkedIn](https://www.linkedin.com/in/lucianogarriga)
