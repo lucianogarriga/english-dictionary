@@ -150,6 +150,49 @@ The first position in the result [0], and the first in meanings too [0], and the
     meaningEl.innerText = result[0].meanings[0].definitions[0].definition;
 ```
 
+## F) Audio Element
+
+We need to bring the audio element, so we create another constant.
+
+```js
+    const audioEl = document.getElementById("audio");
+```
+
+We need to change the Audio 'src' to the one that we get from the API.
+
+```js
+    audioEl.src = result[0].phonetics[0].audio;
+```
+Then, we want to prevent the situation when we type something that doesn't have any meaning. 
+
+So we create a condition (after the result comes).
+
+```js 
+if(result.title){
+    //we need set the display of meaningContainer to block at the top
+    meaningContainerEl.style.display = "block";
+    titleEl.innerText = word;
+    //the words you typed (this is the vote we are getting from the input)
+    meaningEl.innerText = "N/A";
+    //for meaning = Not available
+    audioEl.style.display = "none";
+    //we change the display to none
+} else {
+    //we bring everything to the 'else' condition
+    //all the data that we bring from the API
+    infoTextEl.style.display = "none";
+    meaningContainerEl.style.display = "block";  
+    
+    //As we set the display of the audio to none, 
+    //we need to bring it back to the normal
+    audioEl.style.display = "inline-flex";
+    titleEl.innerText = result[0].word;
+    meaningEl.innerText = result[0].meanings[0].definitions[0].definition;
+    audioEl.src = result[0].phonetics[0].audio;
+}
+
+```
+
 <br>
 
 -----
