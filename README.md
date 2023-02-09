@@ -3,14 +3,13 @@
 The following repository shares a project whose functionality is an English dictionary.  
 <br>
 
+![Image text](https://github.com/lucianogarriga/english-dictionary/blob/main/img/main-view.png) 
+
+![Image text](https://github.com/lucianogarriga/english-dictionary/blob/main/img/dark-mode-results.png)
 
 
-It is based on HTML, CSS and Javascript.
-
-
-  
+It is based on HTML, CSS and Javascript.  
 <br>
-
 
 -----
 <br>
